@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+body {
+   background-color: #58250a;
+}
+
+@layer utilities {
+   .animate-my-custom {
+      animation: myCustomAnimation 1s ease-in-out infinite;
+   }
+
+   .slide-in-left {
+      animation: slideInFromLeft 0.5s ease-out;
+      /* animation-timeline: scroll(); */
+   }
+
+   .slide-in-right {
+      animation: slideInFromRight 0.5s ease-out;
+   }
+
+   .slide-in-left-slow {
+      animation: slideInFromLeft 1s ease-out;
+   }
+
+   .slide-in-right-slow {
+      animation: slideInFromRight 1s ease-out;
+   }
+
+   .moving-line {
+      animation: moveHorizontal 15s linear infinite;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+   }
+
+   .slidedown {
+      animation: slidedown 1s linear;
+   }
+}
+
+@keyframes myCustomAnimation {
+   0% {
+      transform: translate();
+   }
+
+   50% {
+      transform: scale(1.1);
+   }
+
+   100% {
+      transform: scale(1);
+   }
+}
+
+@keyframes slideInFromLeft {
+   0% {
+      opacity: 0;
+      transform: translateX(-50%);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+@keyframes slideInFromRight {
+   0% {
+      opacity: 0;
+      transform: translateX(100%);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+@keyframes moveHorizontal {
+   0%{
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+}
+
+@keyframes slidedown {
+   0% {
+      opacity: 0;
+      transform: translateY(-100%);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
